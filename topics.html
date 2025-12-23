@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Topics - Penetration Testing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="topics.html" class="active">Topics</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <h1>Penetration Testing Topics</h1>
+
+  <!-- Search Box -->
+  <input type="text" id="searchInput" placeholder="Search topics..." onkeyup="searchTopics()">
+
+  <!-- Topics Categories -->
+  <h2>Web Application Security</h2>
+  <ul class="topic-category">
+    <li>OWASP Top 10</li>
+    <li>SQL Injection (SQLi)</li>
+    <li>Cross-Site Scripting (XSS)</li>
+    <li>Broken Authentication</li>
+    <li>Security Misconfigurations</li>
+    <li>Insecure Deserialization</li>
+    <li>HTTP Request Smuggling</li>
+    <li>Server-Side Request Forgery (SSRF)</li>
+    <li>Template Injection</li>
+  </ul>
+
+  <h2>API Security</h2>
+  <ul class="topic-category">
+    <li>REST API Testing</li>
+    <li>GraphQL Security</li>
+    <li>Authentication & Authorization</li>
+    <li>Rate Limiting & Throttling</li>
+    <li>API Vulnerability Scanning</li>
+  </ul>
+
+  <h2>Mobile Security</h2>
+  <ul class="topic-category">
+    <li>Android App Security</li>
+    <li>iOS App Security</li>
+    <li>Reverse Engineering</li>
+    <li>Insecure Data Storage</li>
+    <li>Mobile API Security</li>
+  </ul>
+
+  <script src="script.js"></script>
+
+  <script>
+    // Search function for all topics
+    function searchTopics() {
+      let input = document.getElementById('searchInput').value.toLowerCase();
+      let categories = document.getElementsByClassName('topic-category');
+
+      for (let i = 0; i < categories.length; i++) {
+        let items = categories[i].getElementsByTagName('li');
+        let categoryHasMatch = false;
+
+        for (let j = 0; j < items.length; j++) {
+          let topic = items[j].innerText.toLowerCase();
+          if (topic.indexOf(input) > -1) {
+            items[j].style.display = '';
+            categoryHasMatch = true;
+          } else {
+            items[j].style.display = 'none';
+          }
+        }
+
+        // Show or hide the whole category if no items match
+        categories[i].previousElementSibling.style.display = categoryHasMatch ? '' : 'none'; // h2
+      }
+    }
+  </script>
+
+</body>
+</html>
