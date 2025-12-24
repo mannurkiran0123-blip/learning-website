@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Contact - My Learning Website</title>
+  <meta charset="UTF-8">
+  <title>Contact</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <nav>
+<nav>
+  <div>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="topics.html">Topics</a>
-    <a href="contact.html" class="active">Contact</a>
-  </nav>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search topics">
+    <button onclick="searchTopics()">Search</button>
+  </div>
+</nav>
 
+<main>
   <h1>Contact Me</h1>
-
-  <form id="contactForm">
+  <form>
     <label>Name:</label><br>
     <input type="text" name="name"><br><br>
 
@@ -23,11 +30,16 @@
     <input type="email" name="email"><br><br>
 
     <label>Message:</label><br>
-    <textarea name="message"></textarea><br><br>
+    <textarea name="message" rows="5"></textarea><br><br>
 
-    <input type="submit" value="Send">
+    <button type="submit">Send</button>
   </form>
+</main>
 
-  <script src="script.js"></script>
+<footer>
+  <p>&copy; 2025 Kiran Mannur</p>
+</footer>
+
+<script src="search.js"></script>
 </body>
 </html>

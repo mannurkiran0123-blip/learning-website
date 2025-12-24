@@ -1,22 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Home - My Learning Website</title>
+  <meta charset="UTF-8">
+  <title>My Learning Website</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Navigation -->
   <nav>
-    <a href="index.html" class="active">Home</a>
-    <a href="about.html">About</a>
-    <a href="topics.html">Topics</a>
-    <a href="contact.html">Contact</a>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="topics.html">Topics</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search topics">
+      <button onclick="searchTopics()">Search</button>
+    </div>
   </nav>
 
-  <h1>Welcome to My Website</h1>
-  <img src="images/mypic.jpg" alt="My Picture" width="200">
+  <!-- Main Content -->
+  <main>
+    <section id="welcome">
+      <img src="images/security.png" alt="Security Illustration">
+      <div id="welcome-text">
+        <h1>Welcome to My Website!</h1>
+        <p>
+          Welcome to my personal learning website! Here, I share my journey in 
+          <strong>Web, API, and Mobile Security</strong>. Explore security topics, practical examples, 
+          and tools I use in real-world penetration testing.
+        </p>
+        <a href="topics.html">Explore Topics</a>
+      </div>
+    </section>
 
-  <script src="script.js"></script>
+    <section id="highlights">
+      <h2>Key Topics Covered</h2>
+      <ul>
+        <li><strong>Web Security:</strong> OWASP Top 10, XSS, SQL Injection, CSRF</li>
+        <li><strong>API Security:</strong> REST API Testing, Authentication, Rate Limiting</li>
+        <li><strong>Mobile Security:</strong> Android & iOS Testing, Insecure Storage, API Security</li>
+        <li><strong>Tools:</strong> Burp Suite, Postman, OWASP ZAP</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Kiran Mannur</p>
+  </footer>
+
+  <script src="search.js"></script>
 </body>
 </html>
-
